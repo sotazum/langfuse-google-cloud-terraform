@@ -1,0 +1,5 @@
+.terraform/**
+.terraform*
+terraform/google/**/backend.tf
+
+.DS_Store
