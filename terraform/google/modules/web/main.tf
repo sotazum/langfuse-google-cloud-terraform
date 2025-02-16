@@ -21,10 +21,10 @@ resource "google_cloud_run_service_iam_member" "langfuse_web_invoker" {
 }
 
 resource "google_cloud_run_v2_service" "langfuse_web" {
-  name     = "langfuse-web"
-  location = var.region
+  name                = "langfuse-web"
+  location            = var.region
   deletion_protection = false
-  ingress  = "INGRESS_TRAFFIC_ALL"
+  ingress             = "INGRESS_TRAFFIC_ALL"
   template {
     service_account = google_service_account.langfuse_service_account.email
     containers {

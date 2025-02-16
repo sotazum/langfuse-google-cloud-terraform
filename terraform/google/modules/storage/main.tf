@@ -9,7 +9,7 @@ resource "google_storage_bucket" "langfuse_storage" {
 }
 
 resource "google_service_account" "service_account" {
-  account_id = "langfuse-gcs-sa"
+  account_id   = "langfuse-gcs-sa"
   display_name = "Langfuse GCS Service Account"
 }
 

@@ -16,10 +16,10 @@ resource "google_project_iam_member" "langfuse_worker_service_account_role" {
 
 # Deploy Langfuse Worker on Cloud Run
 resource "google_cloud_run_v2_service" "langfuse_worker" {
-  name     = "langfuse-worker"
-  location = var.region
+  name                = "langfuse-worker"
+  location            = var.region
   deletion_protection = false
-  ingress  = "INGRESS_TRAFFIC_ALL"
+  ingress             = "INGRESS_TRAFFIC_ALL"
 
   template {
     service_account = google_service_account.langfuse_worker_service_account.email

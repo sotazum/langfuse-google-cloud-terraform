@@ -28,17 +28,17 @@ locals {
   }
 
   env_web = merge(local.env_worker, {
-    NEXTAUTH_URL                          = "https://langfuse-web-${var.project_number}.${var.region}.run.app"
-    NEXTAUTH_SECRET                       = var.nextauth_secret
-    LANGFUSE_INIT_ORG_ID                  = ""
-    LANGFUSE_INIT_ORG_NAME                = ""
-    LANGFUSE_INIT_PROJECT_ID              = ""
-    LANGFUSE_INIT_PROJECT_NAME            = ""
-    LANGFUSE_INIT_PROJECT_PUBLIC_KEY      = ""
-    LANGFUSE_INIT_PROJECT_SECRET_KEY      = ""
-    LANGFUSE_INIT_USER_EMAIL              = ""
-    LANGFUSE_INIT_USER_NAME               = ""
-    LANGFUSE_INIT_USER_PASSWORD           = ""
+    NEXTAUTH_URL                     = "https://langfuse-web-${var.project_number}.${var.region}.run.app"
+    NEXTAUTH_SECRET                  = var.nextauth_secret
+    LANGFUSE_INIT_ORG_ID             = ""
+    LANGFUSE_INIT_ORG_NAME           = ""
+    LANGFUSE_INIT_PROJECT_ID         = ""
+    LANGFUSE_INIT_PROJECT_NAME       = ""
+    LANGFUSE_INIT_PROJECT_PUBLIC_KEY = ""
+    LANGFUSE_INIT_PROJECT_SECRET_KEY = ""
+    LANGFUSE_INIT_USER_EMAIL         = ""
+    LANGFUSE_INIT_USER_NAME          = ""
+    LANGFUSE_INIT_USER_PASSWORD      = ""
   })
 }
 
@@ -55,7 +55,7 @@ module "web" {
 
   env_web = local.env_web
 
-  depends_on = [ module.worker ]
+  depends_on = [module.worker]
 }
 
 module "worker" {
@@ -70,7 +70,7 @@ module "worker" {
 
   env_worker = local.env_worker
 
-  depends_on = [ module.clickhouse ]
+  depends_on = [module.clickhouse]
 }
 
 
@@ -110,8 +110,8 @@ module "redis" {
 module "postgres" {
   source = "../../modules/postgres"
 
-  project_id = var.project_id
-  region     = var.region
+  project_id   = var.project_id
+  region       = var.region
   network_name = module.vpc.network_name
 
   env_postgres = {
@@ -123,10 +123,10 @@ module "postgres" {
 module "regstry" {
   source = "../../modules/registry"
 
-  project_id              = var.project_id
-  region                  = var.region
-  web_repository_id       = var.web_repository_id
-  worker_repository_id    = var.worker_repository_id
+  project_id               = var.project_id
+  region                   = var.region
+  web_repository_id        = var.web_repository_id
+  worker_repository_id     = var.worker_repository_id
   clickhouse_repository_id = var.clickhouse_repository_id
 }
 
