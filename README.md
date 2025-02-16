@@ -103,4 +103,4 @@ Our `main` branch will continuously support Langfuse v3. Langfuse v3 gained a so
 
 9. Access to Langfuse
 
-    - Check your Cloud Run URL on Google Cloud Console (default: `https://langfuse-<your-project-number>.<your-region>.run.app`)
+    - Check your Cloud Run URL on Google Cloud Console (default: `https://langfuse-web-<your-project-number>.<your-region>.run.app`)
