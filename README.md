@@ -29,7 +29,7 @@ Our `main` branch will continuously support Langfuse v3. Langfuse v3 gained a so
 ### Getting Started
 1. Clone the repository and move directories
     ```
-    git clone https://github.com/sotazum/langfuse-terraform.git
+    git clone https://github.com/sotazum/langfuse-google-cloud-terraform.git
     cd terraform/google/environments/dev
     ```
 
