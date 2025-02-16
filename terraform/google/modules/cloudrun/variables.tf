@@ -11,7 +11,7 @@ variable "region" {
 }
 
 variable "repository_id" {
-  type = string
+  type    = string
   default = "langfuse-repo"
 }
 
@@ -87,17 +87,17 @@ variable "langfuse_init_user_password" {
 }
 
 variable "postgres_user" {
-  type = string
+  type    = string
   default = "postgres"
 }
 
 variable "postgres_password" {
-  type = string
+  type    = string
   default = "postgres"
 }
 
 variable "postgres_db" {
-  type = string
+  type    = string
   default = "postgres"
 }
 

@@ -7,17 +7,17 @@ variable "region" {
 }
 
 variable "postgres_user" {
-  type = string
+  type    = string
   default = "postgres"
 }
 
 variable "postgres_password" {
-  type = string
+  type    = string
   default = "postgres"
 }
 
 variable "postgres_db" {
-  type = string
+  type    = string
   default = "postgres"
 }
 
