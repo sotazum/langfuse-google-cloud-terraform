@@ -1,6 +1,6 @@
 resource "google_service_networking_connection" "private_vpc_connection" {
   provider                = google-beta
-  network                 = var.vpc_network_name
+  network                 = var.network_name
   service                 = "servicenetworking.googleapis.com"
   reserved_peering_ranges = [google_compute_global_address.private_ip_range.name]
 }
@@ -11,7 +11,7 @@ resource "google_compute_global_address" "private_ip_range" {
   purpose       = "VPC_PEERING"
   address_type  = "INTERNAL"
   prefix_length = 16
-  network       = var.vpc_network_name
+  network       = var.network_name
 }
 
 
@@ -46,7 +46,7 @@ resource "google_sql_database_instance" "postgres_instance" {
 
     ip_configuration {
       ipv4_enabled    = true
-      private_network = "projects/${var.project_id}/global/networks/${var.vpc_network_name}"
+      private_network = "projects/${var.project_id}/global/networks/${var.network_name}"
     }
 
     location_preference {
@@ -64,12 +64,8 @@ resource "google_sql_database_instance" "postgres_instance" {
 }
 
 resource "google_sql_user" "langfuse_user" {
-  name     = var.postgres_user
+  name     = var.env_postgres["POSTGRES_USER"]
   instance = google_sql_database_instance.postgres_instance.name
   project  = var.project_id
-  password = var.postgres_password
-}
-
-output "cloudsql_internal_ip" {
-  value = google_sql_database_instance.postgres_instance.private_ip_address
+  password = var.env_postgres["POSTGRES_PASSWORD"]
 }
