@@ -1,6 +1,7 @@
 name: Create Release 🚀
 
 on:
+  workflow_dispatch:
   pull_request:
 
 permissions:
