@@ -6,6 +6,8 @@
 ## Overview
 Terraform configuration for self-hosting [Langfuse](https://langfuse.com/) on public cloud platforms. Currently, this repository supports only Google Cloud. Contributions for other platforms like AWS and Azure are welcome.
 
+![Langfuse v3 Architecture on Google Cloud](images/langfuse_v3_self_host_google_cloud.png)
+
 ## Update Langfuse v2 to v3
 Our `main` branch will continuously support Langfuse v3. Langfuse v3 gained a solid and scalable architecture with the latest major update. You can also access previous version at `v2` branch.
 
