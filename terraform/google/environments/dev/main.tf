@@ -16,9 +16,9 @@ module "cloudrun" {
 module "cloudsql" {
   source = "../../modules/cloudsql"
 
-  project_id        = var.project_id
-  region            = var.region
-  vpc_network_name  = module.network.vpc_network_name
+  project_id       = var.project_id
+  region           = var.region
+  vpc_network_name = module.network.vpc_network_name
 }
 
 module "network" {
