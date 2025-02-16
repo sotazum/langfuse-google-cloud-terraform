@@ -1,0 +1,1 @@
+ALTER TABLE traces MATERIALIZE INDEX IF EXISTS idx_session_id;

@@ -1,5 +1,6 @@
 .terraform/**
 .terraform*
+terraform.tfstate*
 terraform/google/**/backend.tf
 
 .DS_Store
