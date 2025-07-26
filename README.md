@@ -3,6 +3,9 @@
 ![Google Cloud](https://img.shields.io/badge/Google%20Cloud-4285F4?logo=google-cloud&logoColor=white)
 ![Terraform](https://img.shields.io/badge/Terraform-1.9.8-blue.svg)
 
+> [!NOTE]
+> - This is experimental project. Tracing works, but not all of Langfuse's features have been verified to work.
+
 ## Overview
 Terraform configuration for self-hosting [Langfuse](https://langfuse.com/) on Google Cloud.
 
