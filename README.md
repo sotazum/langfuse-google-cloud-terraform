@@ -4,7 +4,7 @@
 ![Terraform](https://img.shields.io/badge/Terraform-1.9.8-blue.svg)
 
 > [!NOTE]
-> - This is experimental project. Tracing works, but not all of Langfuse's features have been verified to work.
+> - This is an experimental project. Tracing works, but not all of Langfuse's features have been verified to work.
 
 ## Overview
 Terraform configuration for self-hosting [Langfuse](https://langfuse.com/) on Google Cloud.
